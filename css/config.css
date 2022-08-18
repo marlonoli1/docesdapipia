@@ -1,0 +1,8 @@
+:root {
+    --primary: pink;
+    --primary-dark: rgb(243, 105, 128);
+    --secondary: white;
+    --light: #f0f0f0;
+    --medium: rgb(255, 111, 135);
+    --dark: #ff9393;
+}
