@@ -9,16 +9,25 @@ jQuery(document).ready(function ($) {
         }
     };
 
+    //ANIMAÇÃO ROLAGEM PAGINA
     $('nav a').click(function(e){
         var id = $(this).attr('href'), targetOffset = $(id).offset().top;
-        if (id != "#header") {
+        var lu = window.pageYOffset;
+
+        if (lu == 0) {
             $('html, body').animate({
-                scrollTop: targetOffset - 160
+                scrollTop: targetOffset - 260
             }, 500); 
         } else {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 500); 
+            if (id != "#header") {
+                $('html, body').animate({
+                    scrollTop: targetOffset - 160
+                }, 500); 
+            } else {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500); 
+            }
         }
     });
 
@@ -50,27 +59,5 @@ jQuery(document).ready(function ($) {
             tNext: "Próxima",
             tCounter: '<span class="mfp-counter">%curr% de %total%</span>'
         }
-    });
-
-    // CAROUSEL
-    $(".owl-carousel").owlCarousel({
-        loop: false,
-        margin: 30,
-        autoplay: false,
-        autoplayTimeout: 2000,
-        dots: true,
-        lazyLoud: true,
-        nav: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 2
-            },
-        },
     });
 });
